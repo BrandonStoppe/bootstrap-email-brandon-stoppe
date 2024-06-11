@@ -12,57 +12,160 @@
     <div class="container-fluid vh-100 d-flex flex-column">
        
         <!-- Header -->
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid"> 
-                <a class="navbar-brand" href="#">
-                    <img src="#" alt="Email" width="30" height="24">
+        <nav class="navbar bg-body-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="img/brickmail-icon.png" width="200" alt=""></a>
+              
+              <!-- Profile Icon Dropstart -->
+              <div class="btn-group dropstart d-none d-lg-block">
+                <a class="navbar-brand" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="img/profile-icon.png" width="100" alt="Account" class="">
                 </a>
-            </div> 
-        </nav>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                  </ul>
+              </div>
+
+              <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header ms-4 mt-3">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body ms-4">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Inbox</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Sent</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Drafts</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Trash</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
 
         <!-- Main Content Area -->
         <div class="row h-100">
             
+            <!-- Fixed Compose Button -->
+            <div class="container w-auto mb-5 me-sm-5 d-flex justify-content-end fixed-bottom d-lg-none">
+                <button type="button" class="btn rounded-pill btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square mb-1" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                    </svg> Compose
+                </button>
+            </div>
+
+              <!-- Fixed Compose Button Modal -->
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Understood</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             <!-- Sidebar -->
             <div class="col-lg-2 d-none d-lg-block bg-info">
-                <div class="navigation-list mt-5 h-25 d-flex flex-column justify-content-evenly text-center" role="tablist">
-                    <a class="list-group-item list-group-item-action p-2 rounded-0 border-0 bg-transparent"
-                        data-toggle="list" href="#inbox" role="tab"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-inbox mb-1" viewBox="0 0 16 16">
-                            <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z"/>
-                        </svg> Inbox</a>
-                    <a class="list-group-item list-group-item-action p-2 rounded-0 border-0 bg-transparent"
-                        data-toggle="list" href="#sent" role="tab"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-send mb-1" viewBox="0 0 16 16">
-                            <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
-                        </svg> Sent</a>
-                    <a class="list-group-item list-group-item-action p-2 rounded-0 border-0 bg-transparent"
-                        data-toggle="list" href="#drafts" role="tab"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square mb-1" viewBox="0 0 16 16">
-                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                        </svg> Drafts</a>
-                    <a class="list-group-item list-group-item-action p-2 rounded-0 border-0 bg-transparent"
-                        data-toggle="list" href="#junk" role="tab"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-excel mb-1" viewBox="0 0 16 16">
-                            <path d="M5.884 6.68a.5.5 0 1 0-.768.64L7.349 10l-2.233 2.68a.5.5 0 0 0 .768.64L8 10.781l2.116 2.54a.5.5 0 0 0 .768-.641L8.651 10l2.233-2.68a.5.5 0 0 0-.768-.64L8 9.219l-2.116-2.54z"/>
-                            <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
-                        </svg> Junk</a>
-                    <a class="list-group-item list-group-item-action p-2 rounded-0 border-0 bg-transparent"
-                        data-toggle="list" href="#trash" role="tab"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash mb-1" viewBox="0 0 16 16">
-                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                        </svg> Trash</a>
-                    <a class="list-group-item list-group-item-action p-2 rounded-0 border-0 bg-transparent"
-                        data-toggle="list" href="#log-out" role="tab"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-door-closed mb-1" viewBox="0 0 16 16">
-                            <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3zm1 13h8V2H4z"/>
-                            <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0"/>
-                        </svg> Log Out</a>
-                </div>
 
+              <!-- Sidebar Compose Button -->
+              <div class="container mt-5 ms-2">
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square mb-1" viewBox="0 0 16 16">
+                          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                      </svg> Compose
+                  </button>
+
+                  <!-- Sidebar Compose Button Modal -->
+                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          ...
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Understood</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                <!-- Menu List -->
+                <div class="menu-list mt-3">
+                  <a class="list-group-item pt-4" href="#inbox">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="mb-1 mx-1" viewBox="0 0 16 16">
+                          <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z"/>
+                      </svg> Inbox</a>
+                  <a class="list-group-item pt-4" href="#sent">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-send mb-1 mx-1" viewBox="0 0 16 16">
+                          <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                      </svg> Sent</a>
+                  <a class="list-group-item pt-4" href="#drafts">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil mb-1 mx-1" viewBox="0 0 16 16">
+                          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                      </svg> Drafts</a>
+                  <a class="list-group-item pt-4" href="#junk">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-excel mb-1 mx-1" viewBox="0 0 16 16">
+                          <path d="M5.884 6.68a.5.5 0 1 0-.768.64L7.349 10l-2.233 2.68a.5.5 0 0 0 .768.64L8 10.781l2.116 2.54a.5.5 0 0 0 .768-.641L8.651 10l2.233-2.68a.5.5 0 0 0-.768-.64L8 9.219l-2.116-2.54z"/>
+                          <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+                      </svg> Junk</a>
+                  <a class="list-group-item pt-4" href="#trash">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash mb-1 mx-1" viewBox="0 0 16 16">
+                          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                          <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                      </svg> Trash</a> 
+                </div>
+              </div>   
             </div>
 
             <!-- Received Messages -->
-            <div class="col-sm-5 bg-warning overflow-y-scroll h-100">
+            <div class="col-sm-5 col-lg-4 bg-warning overflow-y-scroll h-100">
                 
                 <!-- Search Bar  -->
-                <form class="searchBar" role="search">
+                <form class="searchBar sticky-top" role="search">
                     <input class="form-control me-2 text-center mt-1" type="search" placeholder="Search Email" aria-label="Search">
                 </form>
                 
@@ -217,8 +320,48 @@
             </div>
 
             <!-- Message Content -->
-            <div class="col-sm-7 col-lg-5 d-none d-sm-block bg-secondary">
+            <div class="col-sm-7 col-lg-6 d-none d-sm-block bg-light">
+              <div class="message-info bg-secondary-subtle ps-5 py-3 h-auto">
+                <div class="mb-3 row">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">From:</label>
+                  <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="studmuffin01@brickmail.com">
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">To:</label>
+                  <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="lordofthebricks@brickmail.com">
+                  </div>
+                </div>
+                <div class="row">
+                  <label for="staticEmail" class="col-3 col-md-2 col-form-label">Subject:</label>
+                  <div class="col-9 col-md-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Out of the office">
+                  </div>
+                </div>
 
+              </div>
+              <div class="message-text bg-light h-auto">
+                <p class="message-box mx-2 my-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                  voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                </p>
+
+              </div>
+              <div class="message-text bg-light h-auto">
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Reply" id="floatingTextarea2" style="height: 200px"></textarea>
+                  <label class="text-secondary" for="floatingTextarea2">Reply</label>
+                  <div class="btn-group mt-2 gap-1 d-flex justify-content-end" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary">Reply</button>
+                    <button type="button" class="btn btn-primary">Reply All</button>
+                    <button type="button" class="btn btn-primary">Forward</button>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
     </div>
