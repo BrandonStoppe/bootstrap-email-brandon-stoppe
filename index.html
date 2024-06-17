@@ -68,14 +68,14 @@
                 </div>
               </div>
             </div>
-          </nav>
+        </nav>
 
         <!-- Main Content Area -->
         <div class="row h-100">
             
             <!-- Fixed Compose Button -->
-            <div class="container w-auto mb-5 me-sm-5 d-flex justify-content-end fixed-bottom d-lg-none">
-                <button type="button" class="btn rounded-pill btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <div class="container w-auto mb-5 me-3 me-sm-0 d-flex justify-content-end justify-content-sm-center fixed-bottom d-lg-none">
+                <button type="button" class="btn rounded-pill btn-danger" data-bs-toggle="modal" data-bs-target="#fixedModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square mb-1" viewBox="0 0 16 16">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
@@ -84,19 +84,28 @@
             </div>
 
               <!-- Fixed Compose Button Modal -->
-              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal fade" id="fixedModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      ...
+                      <form>
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Recipient:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                          <label for="message-text" class="col-form-label">Message:</label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                      </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Understood</button>
+                      <button type="button" class="btn btn-primary">Send message</button>
                     </div>
                   </div>
                 </div>
@@ -107,7 +116,7 @@
 
               <!-- Sidebar Compose Button -->
               <div class="container mt-5 ms-2">
-                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#sidebarModal">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square mb-1" viewBox="0 0 16 16">
                           <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                           <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
@@ -115,19 +124,28 @@
                   </button>
 
                   <!-- Sidebar Compose Button Modal -->
-                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal fade" id="sidebarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                          ...
+                          <form>
+                            <div class="mb-3">
+                              <label for="recipient-name" class="col-form-label">Recipient:</label>
+                              <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Message:</label>
+                              <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                          </form>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Understood</button>
+                          <button type="button" class="btn btn-primary">Send message</button>
                         </div>
                       </div>
                     </div>
@@ -173,19 +191,19 @@
                 <div class="list-group mt-1">
                     <a href="#" class="list-group-item list-group-item-action" aria-current="true">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small>3 days ago</small>
+                        <h5 class="mb-1">Susan Brick</h5>
+                        <small>Today</small>
                     </div>
-                    <p class="mb-1">Some placeholder content in a paragraph.</p>
+                    <p class="mb-1">Pizza in the lobby</p>
                     <small>And some small print.</small>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action active">
+                    <a href="#" class="list-group-item list-group-item-action active" data-bs-toggle="modal" data-bs-target="#messageModal">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small class="text-body-secondary">3 days ago</small>
+                        <h5 class="mb-1">Tommy Stud</h5>
+                        <small class="text-body-secondary">Today</small>
                     </div>
-                    <p class="mb-1">Some placeholder content in a paragraph.</p>
-                    <small class="text-body-secondary">And some muted small print.</small>
+                    <p class="mb-1">Photo from my trip</p>
+                    <small class="text-body-secondary">Check out this cool photo from one of my hikes on vacation!</small>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
@@ -315,13 +333,73 @@
                                         <p class="mb-1">Some placeholder content in a paragraph.</p>
                                         <small class="text-body-secondary">And some muted small print.</small>
                                         </a>
+                
+                                        
+                  <!-- Small Screen Message Modal -->
+                  <div class="modal fade d-sm-none" id="messageModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="staticBackdropLabel">Photo from my trip</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="">
+                          <label for="recipient-name" class="col-form-label ms-3">From:</label>
+                          <input type="text" class="form-control" id="recipient-name" readonly class="form-control-plaintext" id="staticEmail" value="studmuffin01@brickmail.com">
+                        </div>
+                        <div class="modal-body">
+                          <img src="img/mini-fig-adventure.jpg" alt="" width="500" class="mt-3 img-fluid">
+                          <p class="message-box mx-2 my-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                          </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#replyModal">Reply</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Small Screen Message Reply Modal -->
+                  <div class="modal fade" id="replyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="mb-3">
+                              <label for="recipient-name" class="col-form-label">Recipient:</label>
+                              <input type="text" class="form-control" id="recipient-name" readonly class="form-control-plaintext" id="staticEmail" value="studmuffin01@brickmail.com">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Message:</label>
+                              <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#messageModal">Back</button>
+                          <button type="button" class="btn btn-primary">Send message</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
                 </div>
+
                 
             </div>
 
             <!-- Message Content -->
-            <div class="col-sm-7 col-lg-6 d-none d-sm-block bg-light">
-              <div class="message-info bg-secondary-subtle ps-5 py-3 h-auto">
+            <div class="message-content-area col-sm-7 col-lg-6 d-none d-sm-block bg-dark-subtle">
+              <div class="message-info bg-transparent ps-5 py-3 h-auto rounded-bottom-2">
                 <div class="mb-3 row">
                   <label for="staticEmail" class="col-sm-2 col-form-label">From:</label>
                   <div class="col-sm-10">
@@ -337,32 +415,51 @@
                 <div class="row">
                   <label for="staticEmail" class="col-3 col-md-2 col-form-label">Subject:</label>
                   <div class="col-9 col-md-10">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Out of the office">
+                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Photo from my trip">
                   </div>
                 </div>
-
               </div>
-              <div class="message-text bg-light h-auto">
+
+              <!-- Reply, Reply-All, Forward Buttons -->
+              <div class="btn-group d-flex justify-content-evenly gap-1" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reply" viewBox="0 0 16 16">
+                    <path d="M6.598 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.7 8.7 0 0 0-1.921-.306 7 7 0 0 0-.798.008h-.013l-.005.001h-.001L7.3 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L2.614 8.254l-.042-.028a.147.147 0 0 1 0-.252l.042-.028zM7.8 10.386q.103 0 .223.006c.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96z"/>
+                  </svg></button>
+                <button type="button" class="btn btn-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reply-all" viewBox="0 0 16 16">
+                    <path d="M8.098 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.7 8.7 0 0 0-1.921-.306 7 7 0 0 0-.798.008h-.013l-.005.001h-.001L8.8 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L4.114 8.254l-.042-.028a.147.147 0 0 1 0-.252l.042-.028zM9.3 10.386q.102 0 .223.006c.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96z"/>
+                    <path d="M5.232 4.293a.5.5 0 0 0-.7-.106L.54 7.127a1.147 1.147 0 0 0 0 1.946l3.994 2.94a.5.5 0 1 0 .593-.805L1.114 8.254l-.042-.028a.147.147 0 0 1 0-.252l.042-.028 4.012-2.954a.5.5 0 0 0 .106-.699"/>
+                  </svg></button>
+                <button type="button" class="btn btn-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-forward" viewBox="0 0 16 16">
+                    <path d="M9.502 5.513a.144.144 0 0 0-.202.134V6.65a.5.5 0 0 1-.5.5H2.5v2.9h6.3a.5.5 0 0 1 .5.5v1.003c0 .108.11.176.202.134l3.984-2.933.042-.028a.147.147 0 0 0 0-.252l-.042-.028zM8.3 5.647a1.144 1.144 0 0 1 1.767-.96l3.994 2.94a1.147 1.147 0 0 1 0 1.946l-3.994 2.94a1.144 1.144 0 0 1-1.767-.96v-.503H2a.5.5 0 0 1-.5-.5v-3.9a.5.5 0 0 1 .5-.5h6.3z"/>
+                  </svg></button>
+              </div>
+              
+              <!-- Message Content Box -->
+              <div class="message-text bg-light h-auto d-flex flex-column align-items-center rounded-2">
+                <img src="img/mini-fig-adventure.jpg" alt="" width="500" class="mt-3 img-fluid">
                 <p class="message-box mx-2 my-4">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
                   labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
                   voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
                 </p>
-
-              </div>
-              <div class="message-text bg-light h-auto">
-                <div class="form-floating">
-                  <textarea class="form-control" placeholder="Reply" id="floatingTextarea2" style="height: 200px"></textarea>
-                  <label class="text-secondary" for="floatingTextarea2">Reply</label>
-                  <div class="btn-group mt-2 gap-1 d-flex justify-content-end" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary">Reply</button>
-                    <button type="button" class="btn btn-primary">Reply All</button>
-                    <button type="button" class="btn btn-primary">Forward</button>
-                  </div>
-                </div>
+                
+              <!-- Text Box Area   -->
+              <div class="form-floating w-100">
+                <textarea class="form-control" placeholder="Reply" id="floatingTextarea2" style="height: 200px"></textarea>
+                <label class="text-secondary" for="floatingTextarea2">Reply</label>
+                  <div class="container d-flex justify-content-end my-2">
+                    <button type="button" class="btn btn-primary"
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                      Send
+                    </button>                    
+                  </div> 
               </div>
             </div>
+          </div>
         </div>
     </div>
 

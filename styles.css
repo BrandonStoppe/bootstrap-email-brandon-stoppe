@@ -1,0 +1,16 @@
+.message-content-area {
+    background-image: url(img/bricks-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.message-info {
+    backdrop-filter: blur(5px);
+    color: white;
+    
+}
+
+
+#staticEmail {
+    color: white;
+}
