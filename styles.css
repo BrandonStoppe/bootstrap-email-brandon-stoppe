@@ -1,3 +1,8 @@
+.body {
+    margin-top: 0;
+    padding: 0;
+}
+
 .message-content-area {
     background-image: url(img/bricks-bg.jpg);
     background-size: cover;
